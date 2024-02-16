@@ -1,0 +1,97 @@
+:root {
+    --color-1: #794a3a;
+    --color-2: #dd5341;
+    --color-3: #f57f5b;
+    --color-4: #faca78;
+    --color-5: #68c7c1;
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Fredoka", sans-serif;
+    background-color: var(--color-1);
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    display: block;
+    width: 150px;
+    height: 50px;
+    color: var(--color-1);
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+}
+
+nav ul li a::before {
+    content: attr(data-text);
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-5);
+    transform: rotateX(90deg) translateY(-15px);
+    transform-origin: top;
+    transition: 300ms all;
+}
+
+nav ul li a:hover::before {
+    transform: rotateX(0deg);
+}
+
+nav ul li a::after {
+    content: attr(data-text);
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-4);
+    transform: rotateX(-90deg) translateY(15px);
+    transform-origin: bottom;
+    transition: 300ms all;
+}
+
+nav ul li a:hover::after {
+    transition-delay: 300ms;
+    transform: rotateX(0deg);
+}
+
+
+#home {
+    background-color: var(--color-2);
+}
+
+#developer {
+    background-color: var(--color-3);
+}
+
+#react {
+    background-color: var(--color-4);
+}
+
+#contact {
+    background-color: var(--color-5);
+}
